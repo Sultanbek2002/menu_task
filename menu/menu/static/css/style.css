@@ -1,0 +1,38 @@
+*{
+    margin:0px;
+    padding:0pc;
+}
+.main{
+    background:red;
+    display:flex;
+
+    justify-content: start;
+}
+.dropdown{
+    position: relative;
+}
+.dropdown li{
+    position:absolute;
+    display: none;
+    background:rgb(199, 40, 40);
+    padding:20px;
+    margin-top:15px;
+  }
+.li:hover .dropdown li{
+    display: block;
+    transition: 2s;
+  }
+.li{
+     margin-left:5%;
+     padding:30px;
+     list-style:none;
+     font-weight:bolder;
+}
+a{
+    text-decoration:none;
+    color:white;
+}
+.home_li{
+    background:gold;
+    color:yellow;
+}

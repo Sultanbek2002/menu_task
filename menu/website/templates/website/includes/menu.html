@@ -1,0 +1,40 @@
+{% extends 'website/base.html' %}
+{% block content %}
+<ul class="main">
+    {% for i in menus %}
+    {%if {{i.name_url}} == request.path %}
+    <li class="li home_li">
+        <a href="{{i.name_url}}">{{i.menu_name}}</a>
+        <ul class="dropdown">
+            {% for j in under_menus %}
+            {% if j.under_menu_id == i.id %}
+            <li>
+                {{ j.mini_menu }}
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </li>
+    {% endif %}
+    {% endfor %}
+     {% for i in menus %}
+    {%if {{i.name_url}} != request.path %}
+    <li class="li ">
+        <a href="{{i.name_url}}">{{i.menu_name}}</a>
+        <ul class="dropdown">
+            {% for j in under_menus %}
+            {% if j.under_menu_id == i.id %}
+            <li>
+                {{ j.mini_menu }}
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </li>
+    {% endif %}
+    {% endfor %}
+
+</ul>
+
+
+{% endblock %}
